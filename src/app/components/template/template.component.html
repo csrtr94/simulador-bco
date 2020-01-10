@@ -1,0 +1,62 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <h4 class="letras">Ambiente pruebas <small>API Captación digital</small></h4>
+    <br>
+    <hr>
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Selecciona Ambiente</label>
+        <div class="col-4">
+            <select class="form-control" name="ambiente">
+    <option>Pre-producción</option>
+    <option>Dev</option>
+    <option>Producción</option>
+    
+  </select>
+        </div>
+    </div>
+    <br>
+    <form #form="ngForm" (ngSubmit)="enviar(form)">
+        <div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label ">Selecciona API</label>
+                <div class="col-8">
+
+                    <select class="form-control" name="opciones" #mySelect (change)="apiSelect(mySelect.value)" (click)="resetForm(form)">
+                            <option>Selecciona API</option>
+                            <option *ngFor="let item of apicon; let i = index">{{item.name}}</option>
+                          </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row" name="parametros" *ngFor="let param of parametros; let i = index">
+            <label class="col-2 col-form-label ">{{param}}</label>
+            <div class="col-md-8 ">
+                <input class="form-control" type="text" placeholder="parámetro" name="{{param}}" ngModel>
+            </div>
+        </div>
+        <br>
+        <div class="form-group row ">
+            <label class="col-2 col-form-label ">&nbsp;</label>
+            <div class="input-group col-md-8 ">
+                <button class="btn btn-outline-info btn-lg" type="submit">
+        Enviar
+      </button>
+            </div>
+        </div>
+        <hr>
+        <br>
+        <h4 class="letras">Respuesta API</h4>
+        <br>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1"></label>
+            <textarea class="form-control area" id="exampleFormControlTextarea1" rows="8" name="respo|nse" [(ngModel)]="response"></textarea>
+        </div>
+    </form>
+    <script type="text/javascript" src="./assets/js/host.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>

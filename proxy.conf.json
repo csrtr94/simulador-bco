@@ -1,0 +1,28 @@
+{
+    "/COServices/*": {
+        "target": "http://192.168.76.10",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    },
+
+    "/SinacofiWS_CEDU/*": {
+        "target": "https://www.sinacofi.cl",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    },
+
+    "/SINACOFIWSFE/*": {
+        "target": "https://www.sinacofi.cl",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    },
+    "/SinacofiWS_SNPV/*": {
+        "target": "https://www.sinacofi.cl",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}
